@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Align Interiors</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#F8EAE3; --rose-deep:#C97A6E; --plum:#5C3540; --ivory:#FBF6F2;
+    --display:'Cormorant Garamond',serif; --sans:'Plus Jakarta Sans',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:var(--sans);background:var(--ivory);color:var(--plum);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:40px;text-align:center;
+    background:radial-gradient(ellipse 60% 60% at 50% 30%, rgba(232,181,167,.35), transparent 70%),var(--ivory);
+  }
+  .wrap{max-width:560px}
+  .eyebrow{
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--rose-deep);font-weight:500;margin-bottom:30px;
+    display:inline-flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before,.eyebrow::after{content:'';width:32px;height:1px;background:currentColor}
+  h1{
+    font-family:var(--display);font-weight:300;
+    font-size:clamp(60px,10vw,120px);line-height:1;letter-spacing:-.02em;
+    color:var(--plum);margin-bottom:24px;
+  }
+  h1 em{font-style:italic;color:var(--rose-deep);font-weight:400}
+  p{font-size:17px;line-height:1.7;color:var(--plum);margin-bottom:40px}
+  a.btn{
+    display:inline-flex;align-items:center;gap:12px;
+    padding:14px 28px;border-radius:100px;
+    background:var(--rose-deep);color:#fff;text-decoration:none;
+    font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+    transition:transform .4s ease, background .4s ease;
+  }
+  a.btn:hover{background:var(--plum);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">404 — Page Not Found</div>
+    <h1>This space is <em>under design.</em></h1>
+    <p>The page you are looking for does not exist, or may have moved. Let us take you back to the studio.</p>
+    <a href="/" class="btn">Return Home →</a>
+  </div>
+</body>
+</html>

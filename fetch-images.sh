@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# fetch-images.sh
+# Run once after cloning the repo to download all site images into /images.
+# Requires curl (preinstalled on macOS and most Linux distros).
+#
+# Usage:
+#   chmod +x fetch-images.sh
+#   ./fetch-images.sh
+
+set -e
+
+mkdir -p images
+cd images
+
+echo "Downloading images..."
+
+# Logo
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_885d995ff2fb4806bd81fe3f26082141~mv2.png" -o "align-logo.png"
+
+# Hero / Portfolio / Split residential images
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_c5e361d58d9146429758b2642d115141~mv2.jpg/v1/fit/w_1600,h_2000,q_92,enc_jpg/img.jpg" -o "img-residential-01.jpg"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_a99a535f05ce4b5b83ae63d186428cfe~mv2.jpg/v1/fit/w_1600,h_1600,q_92,enc_jpg/img.jpg" -o "img-residential-02.jpg"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_c087d1d7f7fd4c1f8185feecad3cd896~mv2.jpg/v1/fit/w_1200,h_1500,q_92,enc_jpg/img.jpg" -o "img-residential-03.jpg"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_7ab5b54f0820400d83288f0564fc2dbc~mv2.jpg/v1/fit/w_1200,h_1500,q_92,enc_jpg/img.jpg" -o "img-residential-04.jpg"
+
+# Hospitality
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_9ea8d7a2b2c84e7fa53dadef912f2835~mv2.jpg/v1/fit/w_1200,h_1500,q_92,enc_jpg/img.jpg" -o "img-hospitality-01.jpg"
+
+# Commercial
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_c0355df96cd6448e99dcc611edb4ddb7~mv2.jpg/v1/fit/w_1600,h_1600,q_92,enc_jpg/img.jpg" -o "img-commercial-01.jpg"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_4040969344c94d63bd608f24e0924011~mv2.jpg/v1/fit/w_1600,h_1000,q_92,enc_jpg/img.jpg" -o "img-commercial-02.jpg"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_117bf95ce5ae4fa587302c8c2eddaacd~mv2.jpg/v1/fit/w_1400,h_950,q_92,enc_jpg/img.jpg" -o "img-commercial-03.jpg"
+
+# 3D rendering
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_79caff08f63f43afa9cc6690a7612d3c~mv2.png" -o "img-rendering-01.png"
+
+# Client logos
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_28631c425ab544d5aff70ae1308e52e7~mv2.webp" -o "logo-tic.webp"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_18c15ee0402b4edaa9feaef46967f8b4~mv2.png" -o "logo-mist.png"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_3be5df6e0ef248689d49aa080ff5ec9d~mv2.png" -o "logo-lazzurra.png"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_f3ec00814e204452938e9082b62dda05~mv2.png" -o "logo-aarti.png"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_21e7b148f6f24a88a0d78e685d08e3ee~mv2.png" -o "logo-elite.png"
+curl -fsSL "https://static.wixstatic.com/media/72ce7d_9e5b7bf1bbd24e5faa07fa7d44b7927b~mv2.jpg" -o "logo-armilas.jpg"
+
+# Optional: og-image (social share card) - re-use the hero image for now
+cp img-residential-01.jpg og-image.jpg 2>/dev/null || true
+
+cd ..
+echo ""
+echo "Done. Downloaded images:"
+ls -lh images/
+echo ""
+echo "Next step: commit and push."
+echo "  git add ."
+echo "  git commit -m \"Add site images\""
+echo "  git push"
