@@ -122,7 +122,8 @@ Same process at [Bing Webmaster Tools](https://www.bing.com/webmasters).
 ├── fetch-images.sh        ← Mac/Linux: download all images
 ├── fetch-images.ps1       ← Windows: download all images
 ├── README.md              ← this file
-└── images/                ← populated after running fetch-images
+└── images/                ← align images arrive via fetch-images
+    ├── hs-group-logo.svg  ← H&S Group logo, standalone copy (the footer version is embedded directly in index.html, so nothing to upload)
     ├── align-logo.png
     ├── img-residential-01.jpg
     ├── img-residential-02.jpg
@@ -205,4 +206,4 @@ For Align Interiors directly: [info@aligninteriors.ca](mailto:info@aligninterior
 
 ---
 
-© 2026 Align Interiors Inc. · An H&S Holdings Company
+© 2026 Align Interiors Inc. · A proud member of the H&S Group of Companies
